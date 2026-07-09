@@ -74,7 +74,7 @@ async function createKitchenPdf(browser, order) {
         <div class="divider"></div>
         
         <div class="section">
-            <strong>Valor Total: ${order.cartItemsValueTotal}</strong>
+            <strong>Valor Total: R$${order.cartItemsValueTotal}</strong>
         </div>
         ${new Date(order.createdAt).toLocaleString("pt-BR")}
 
@@ -207,7 +207,8 @@ async function createDeliveryPdf(browser, order) {
         <div class="divider"></div>
 
         <div class="section">
-            <strong>Valor Total: ${order.cartItemsValueTotal}</strong>
+        ${order.formData.change ? "<p> Troco para R$:" + order.formData.change + "</p>" : ""}
+            <strong>Valor Total: R$${order.cartItemsValueTotal}</strong>
         </div>
 
         <div class="center">

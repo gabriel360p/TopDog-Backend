@@ -6,11 +6,15 @@ const app = express();
 
 import rotas from "./routes.js";
 import cors from 'cors'
+import { limiter } from "./configs/rateLimit.js";
 
+//rate limi
+app.use(limiter)
 
 app.use(cors({
     origin: "http://localhost:5173"
 }));
+
 app.use(express.json());
 
 //registrando as rotas 
