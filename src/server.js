@@ -1,8 +1,8 @@
 //Configurações do servidor
 import app from "./app.js";
-const port = 3000;
-
-app.listen(port, () => {
+// const PORT = 3000;
+const PORT = process.env.PORT || 3333;
+app.listen(PORT, () => {
     console.log("Servidor Subiu")
 })
 
