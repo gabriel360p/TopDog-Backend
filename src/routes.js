@@ -4,7 +4,8 @@ import OrderController from "./controllers/OrderController.js";
 const rotas = new Router();
 
 rotas.post('/pedido', OrderController.store);
-app.get("/teste-api-topdog", (req, res) => {
+
+rotas.get("/teste-api-topdog", (req, res) => {
     return res.json({
         status: "API ONLINE"
     });
