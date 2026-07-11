@@ -12,7 +12,7 @@ import { limiter } from "./configs/rateLimit.js";
 app.use(limiter)
 
 app.use(cors({
-    origin: "http://localhost:5173"
+    origin: process.env.FRONT_END,
 }));
 
 app.use(express.json());
